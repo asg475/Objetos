@@ -24,6 +24,11 @@ class Empleado:
     
     def __add__(self, otro):
         return f"Juntos combran {self.pay + otro.pay}"
+    
+    @classmethod
+    def from_string(cls, cadena: str):
+        name, surname = cadena.split(", ")
+        return cls(name, surname)
 
 
 
@@ -39,3 +44,6 @@ sergio.pay_raise()
 print(sergio.pay)
 print(sergio)
 print(sergio + miguel)
+a = "jaled, moustafa"
+jaled = Empleado.from_string(a)
+print(jaled)
