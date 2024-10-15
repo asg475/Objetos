@@ -5,15 +5,15 @@ import random
 class Empleado:
     id_previa = 1
 
-    def __init__(self,name, surname):
+    def __init__(self, name, surname):
         
-        self.id =  Empleado.id_previa
+        self.id = Empleado.id_previa
         self.name = name
         self.surname = False
-        self.email = name +"."+ surname + "@email.com"
+        self.email = name + "." + surname + "@email.com"
         self.pay = random.randint(1500, 2200)
 
-        Empleado.id_previa +=  1
+        Empleado.id_previa += 1
 
     def pay_raise(self):
         self.pay = int( self.pay * 1.15)
@@ -21,6 +21,10 @@ class Empleado:
 
     def __str__(self):
         return f"El empleado {self.name} cobra {self.pay}"
+    
+    def __add__(self, otro):
+        return f"Juntos combran {self.pay + otro.pay}"
+
 
 
 sergio = Empleado("sergio", "pesquera")
@@ -34,3 +38,4 @@ print(miguel.id)
 sergio.pay_raise()
 print(sergio.pay)
 print(sergio)
+print(sergio + miguel)
