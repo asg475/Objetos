@@ -14,11 +14,13 @@ class Empleado:
         self.pay = random.randint(1500, 2200)
 
         Empleado.id_previa +=  1
-    
 
     def pay_raise(self):
-        self.pay = self.pay * 1.15
+        self.pay = int( self.pay * 1.15)
         return print("aumento realizado")
+
+    def __str__(self):
+        return f"El empleado {self.name} cobra {self.pay}"
 
 
 sergio = Empleado("sergio", "pesquera")
@@ -31,3 +33,4 @@ miguel = Empleado("miguel", "Betegon")
 print(miguel.id)
 sergio.pay_raise()
 print(sergio.pay)
+print(sergio)
