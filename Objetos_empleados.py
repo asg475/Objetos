@@ -30,6 +30,7 @@ class Empleado:
         name, surname = cadena.split(", ")
         return cls(name, surname)
 
+
 class CEO(Empleado):
 
     def __init__(self, name, surname):
