@@ -10,7 +10,7 @@ class Empleado:
         self.id = Empleado.id_previa
         self.name = name
         self.surname = surname
-        self.email = name + "." + surname + "@email.com"
+        self.email = f"{name}.{surname}@email.com"
         self.pay = random.randint(1500, 2200)
 
         Empleado.id_previa += 1
